@@ -1,0 +1,22 @@
+model_list:
+
+  - model_name: model1
+    litellm_params:
+      model: groq/qwen/qwen3.8-27b
+      api_key: os.environ/GROQ_API_KEY
+
+  - model_name: model2
+    litellm_params:
+      model: groq/qwen/qwen3.8-27b
+      api_key: os.environ/GROQ_API_KEY
+
+router_settings:
+
+  routing_strategy: simple-shuffle
+  fallbacks:
+    - model1: ["model2"]
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+
