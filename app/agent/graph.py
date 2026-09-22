@@ -34,10 +34,7 @@ def build_graph():
         },
     )
 
-    graph.add_conditional_edges(
-        "risk_check",
-        action_router,
-        {
+    graph.add_conditional_edges("risk_check",action_router,{
             "execute": "execute",
             "approval": "approval",
         },
